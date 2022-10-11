@@ -5,6 +5,10 @@
 		},
 		{
 			"path": "."
+		},
+		{
+			"name": "gloss_attention",
+			"path": "../gloss_attention"
 		}
 	],
 	"settings": {}
