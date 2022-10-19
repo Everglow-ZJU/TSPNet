@@ -17,7 +17,7 @@ ENC_LAYERS=1
 WARMUP=0
 
 VOCAB=25000
-CUDA_VISIBLE_DEVICES=0 python train.py data-bin/phoenix2014T/sp${VOCAB} \
+CUDA_VISIBLE_DEVICES=1 nohup python train.py data-bin/phoenix2014T/sp${VOCAB} \
         --task translation_sign \
         --target-lang de \
         --max-tokens 4096 \

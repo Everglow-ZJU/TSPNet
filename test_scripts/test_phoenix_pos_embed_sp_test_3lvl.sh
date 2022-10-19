@@ -10,7 +10,7 @@ PATIENCE=8
 ENC_LAYERS=1
 
 VOCAB=25000
-python test_scripts/test_sign_local.py data-bin/phoenix2014T/sp${VOCAB} \
+CUDA_VISIBLE_DEVICES=1 nohup python test_scripts/test_sign_local.py data-bin/phoenix2014T/sp${VOCAB} \
         --task translation_sign \
         --target-lang de \
         --max-tokens 4096 \

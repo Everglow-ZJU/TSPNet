@@ -14,7 +14,7 @@ import math
 import os
 import sys
 from typing import Any, Dict, List
-
+import numpy as np
 import torch
 
 from fairseq import checkpoint_utils, distributed_utils, metrics, models, optim, utils
@@ -652,10 +652,11 @@ class Trainer(object):
         num_extra = len(extra_stats_to_sum)
         if len(logging_outputs) > 0:
             sorted_keys = sorted(logging_outputs[0].keys())
-            stats = [0.] + list(extra_stats_to_sum) + [
+            stats = np.array([0.]) + np.array(list(extra_stats_to_sum)) +np.array( [
                 sum(log.get(k, 0) for log in logging_outputs)
                 for k in sorted_keys
-            ]
+            ])
+            stats=stats.tolist()
             stats = stats + [0.]*(min_buffer_size - len(stats))
             buf = torch.cuda.DoubleTensor(stats)
         else:

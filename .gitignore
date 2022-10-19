@@ -145,5 +145,5 @@ cython_debug/
 /data-bin
 /data/
 
-
+/CHECKPOINT_PATH
 *.code-workspace
